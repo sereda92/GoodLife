@@ -31,8 +31,6 @@ footer, header, hgroup, menu, nav, section {
 body {
     font-size: 16px;
 	line-height: 1;
-    /* font-family: 'Manrope', sans-serif; */
-    /* font-family: 'Open Sans', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
 ol, ul {
