@@ -1,28 +1,158 @@
+@import 'reset'
+@import 'extend'
+@import 'mixins'
+@import 'variables'
 
-$font-poppins:'Poppins', sans-serif
-$font-manrope:'Manrope', sans-serif
-$font-open-sans:'Open Sans', sans-serif
 
-// color
-$text-color-white:#FFF
-$text-color-pink:#FFC1D8
-$background-color-pink: #E43071
-$color-text-gray:#424242
-$color-text-light-gray:#969BAB
-$color-text-med-gray:#D9DBE1
 
-    
-h1
-    color: $text-color-white
-    text-align: center
-    font-family: Poppins
-    font-size: 70px
+// main style
+body
+    font-size: 16px
+    line-height: 1
+    font-family: 'Poppins', sans-serif
     font-style: normal
-    font-weight: 700
+    font-weight: 400
+    // background-color: #000
+    color: $color-text-gray
+    font-size: 16px
+    line-height: 37px
+
+h1, h2, h3, h4, h5
     line-height: 110%
+    color: $text-color-black
+
+h1, h2, h4
+    font-weight: 700
+
+h3, h5
+    font-weight: 600
+
+
+h1
+    font-size: 70px
 
 h2
-
+    font-size: 60px
 
 h3
+    font-size: 48px
 
+h4
+    font-size: 40px
+
+h5
+    font-size: 38px
+
+
+// ==================================
+.wrapper
+    max-width: 1440px
+    margin: 0 auto
+
+.__container
+    max-width: 1220px
+    margin: 0 auto
+
+.header 
+    height: 100vh
+
+.logo 
+    h4
+        color: $text-color-white
+        font-weight: 800
+        span
+            color: $text-color-pink
+
+.navbar
+    padding: 0 41px 0 36px
+    height: 101px
+    background-color: $main-color-pink
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.navbar__list
+    display: flex
+    align-items: center
+    gap: 76px
+
+.navbar__item 
+
+.navbar__link 
+    color: $text-color-white
+
+
+.search__link
+    display: flex
+    align-items: center
+    gap: 6px
+    font-size: 16px
+
+.navbar__btn
+    display: flex
+    width: 166px
+    height: 50px
+    justify-content: center
+    align-items: center
+    color: $main-color-pink
+    border-radius: 200px
+    background-color: $text-color-white
+
+// ==========carousel======
+
+.carousel
+    position: relative
+    width: 100%
+    overflow: hidden
+
+
+.slides 
+    position: relative
+    height: 100%
+    z-index: -1
+    display: flex
+    transition: transform 0.5s ease-in-out
+
+
+.slide 
+    flex: 0 0 100%
+    img
+        max-width: 100%
+        object-fit: cover
+
+.indicators 
+    position: absolute
+    bottom: 29px
+    left: 50%
+    transform: translateX(-50%)
+    display: flex
+    align-items: center
+    gap: 8px
+
+
+.indicator 
+    width: 12px
+    height: 12px
+    border-radius: 50%
+    background-color: white
+    cursor: pointer
+
+
+.indicator.active 
+    background-color: $main-color-pink
+    width: 17px
+    height: 17px
+
+// ==========title======
+.title
+    position: absolute
+    display: inline-block
+    width: 634px
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    h1
+        color: $text-color-white
+        text-align: center
+        span
+            color: $text-color-pink

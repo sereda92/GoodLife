@@ -10,15 +10,112 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&family=Open+Sans:wght@600&family=Poppins:wght@400;600;700;800&display=swap"
         rel="stylesheet">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="sass/style.sass">
+    <!-- <link rel="stylesheet" href="/css/reset.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <title>Goodlife</title>
 </head>
 
 <body>
+    <div class="wrapper">
+        <header class="header">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <h4>Good<span>lyfe</span></h4>
+                </a>
+                <ul class="navbar__list">
+                    <li class="navbar__item">
+                        <a href="#" class="navbar__link">Classess</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar__link">Timetable</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar__link">Clubs</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar__link">Nutrition</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar__link">Free Trial</a>
+                    </li>
+                    <li>
+                        <button href="#" class="navbar__link search__link">Search
+                            <img src="/img/search-icon.svg" alt="search">
+                        </button>
+                    </li>
+                </ul>
+                <button class="navbar__btn">Login</button>
+            </nav>
+            <div class="carousel">
+                <div class="title">
+                    <h1 class="title__item">
+                        Welcome to Good <span>lyfe</span> Gyms
+                    </h1>
+                </div>
+                <div class="slides">
+                    <div class="slide active">
+                        <img src="/img/header_carousel/1.jpg" alt="Slide 1">
+                    </div>
+                    <div class="slide">
+                        <img src="/img/header_carousel/1.jpg" alt="Slide 2">
+                    </div>
+                    <div class="slide">
+                        <img src="/img/header_carousel/1.jpg" alt="Slide 3">
+                    </div>
+                    <div class="slide">
+                        <img src="/img/header_carousel/1.jpg" alt="Slide 4">
+                    </div>
+                    <div class="slide">
+                        <img src="/img/header_carousel/1.jpg" alt="Slide 5">
+                    </div>
+                </div>
+                <div class="indicators">
+                    <div class="indicator active"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            
+        </main>
+        <footer class="footer"></footer>
+    </div>
 
 
 
+    <script>
+        $(document).ready(function(){
+        $('.indicator').on('click', function(){
+            var index = $(this).index();
+            $('.slide').removeClass('active');
+            $('.indicator').removeClass('active');
+            $(this).addClass('active');
+            $('.slides').css('transform', 'translateX(' + (-index * 100) + '%)');
+            $('.slide').eq(index).addClass('active');
+        });
+
+        function autoSlide() {
+            var currentIndex = $('.slide.active').index();
+            var nextIndex = (currentIndex + 1) % $('.slide').length;
+            $('.indicator').removeClass('active');
+            $('.indicator').eq(nextIndex).addClass('active');
+            $('.slide').removeClass('active');
+            $('.slide').eq(nextIndex).addClass('active');
+            $('.slides').css('transform', 'translateX(' + (-nextIndex * 100) + '%)');
+        }
+
+  setInterval(autoSlide, 5000); // Переключение каждые 5 секунд
+});
+
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
     <script src="js/main.js"></script>
 </body>
 
