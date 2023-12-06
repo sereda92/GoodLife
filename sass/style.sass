@@ -230,34 +230,53 @@ h5
         
 
 // ===================
+.page__back-color
+    background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%), #F4E3E9
 .reviews__page
-    padding: 113px
-
+    padding: 0 0 81px 113px
 .reviews__block
     display: flex
     align-items: center
-    // margin-left: 210px
+    margin-left: 97px
+    margin-top: -100px
     gap: 33px
 
 .reviews__item
     width: 290px
-    height: 372px
+    height: auto
     border-radius: 10px
     background: $text-color-white
     box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.18)
     padding: 35px 32px 38px 27px
     h5
         color: $main-color-pink
-    >p
-        @extend %subtitle
+    >div
+        display: flex
+        gap: 8px
+        margin-top: 16px
+        &::before
+            content: '“'
+            display: inline-block
+            color: #F8C5D7
+            font-family: Times New Roman
+            font-size: 58px
+            font-weight: 700
+        >div
+            >p
+                @extend %subtitle
+                margin-bottom: 20px
+
 .reviews__sub-item
     display: flex
     flex-direction: column
     gap: 33px
     .reviews__item
         &:nth-child(1)
-            width: 449px
-            height: 343px
+            width: 390px
+            height: auto
+        &:nth-child(2)
+            width: 292px
+            height: auto
             
 .reviews__user
     display: flex
@@ -282,3 +301,10 @@ h5
 .user__name
     @extend %subtitle
     font-weight: 600
+
+// ==========================
+
+.application
+    display: block
+    height: 200px
+    background-color: $main-color-pink
