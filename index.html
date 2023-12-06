@@ -55,6 +55,7 @@
                     <h1 class="title__item">
                         Welcome to Good <span>lyfe</span> Gyms
                     </h1>
+                    <a href="#" class="btn__link">See the benefits</a>
                 </div>
                 <div class="slides">
                     <div class="slide active">
@@ -81,10 +82,121 @@
                     <div class="indicator"></div>
                 </div>
             </div>
-            <div>мой первый пулл</div>
         </header>
         <main class="main">
-            
+            <section class="__container">
+                <div class="info__page">
+                    <div class="info__page-img">
+                        <img src="/img/male_lifting_weights.jpg" alt="lifting">
+                        <img src="/img/female_doing_situps.jpg" alt="situps">
+                    </div>
+                    <div class="info__page-text">
+                        <h4>Meet your new body</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget lectus urna. Nulla magna tortor, bibendum in molestie sed, gravida nec felis. Sed id egestasegestas risus, ut imperdiet augue.</p>
+                        <a href="#" class="btn__link">View the FAQ</a>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="carousel-two">
+                    <div class="title title__two">
+                        <h2 class="title__item">
+                            Become more than you are.
+                        </h2>
+                        <p>
+                            Staying active is great fun and keeps you healthy.
+                            <br>
+                            Check out how you can join in.
+                        </p>
+                        <a href="#" class="btn__link">Let’s do it!</a>
+                    </div>
+                    <div class="slides-two">
+                        <div class="slide-two active">
+                            <img src="/img/woman_doing_situps.jpg" alt="Slide 1">
+                        </div>
+                        <div class="slide-two">
+                            <img src="/img/woman_doing_situps.jpg" alt="Slide 2">
+                        </div>
+                        <div class="slide-two">
+                            <img src="/img/woman_doing_situps.jpg" alt="Slide 3">
+                        </div>
+                        <div class="slide-two">
+                            <img src="/img/woman_doing_situps.jpg" alt="Slide 4">
+                        </div>
+                        <div class="slide-two">
+                            <img src="/img/woman_doing_situps.jpg" alt="Slide 5">
+                        </div>
+                    </div>
+                    <div class="indicators-two">
+                        <div class="indicator-two active"></div>
+                        <div class="indicator-two"></div>
+                        <div class="indicator-two"></div>
+                        <div class="indicator-two"></div>
+                        <div class="indicator-two"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="__container">
+                <div class="info__page">
+                    <div class="info__page-text">
+                        <h4>Premium Facilities</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget lectus urna. Nulla magna tortor, bibendum in molestie sed, gravida nec felis. Sed id egestasegestas risus, ut imperdiet augue.</p>
+                        <a href="#" class="btn__link">Learn more</a>
+                    </div>
+                    <div class="info__page-img infe__two">
+                        <img src="/img/gym_room.jpg" alt="lifting">
+                        <img src="/img/weights.jpg" alt="situps">
+                    </div>
+                </div>
+            </section>
+            <section class="__container">
+                <div class="reviews__page">
+                    <h3>
+                        Real Stories from
+                        <br>
+                        Real Customers
+                    </h3>
+                    <p>Be inspired with these experiences.</p>
+                    <div class="reviews__block">
+                        <div class="reviews__item">
+                            <h5>3Kg lost!</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget lectus urna. Nulla magna tortor, bibendum in molestie sed, gravida nec felis. Sed id egestasegestas risu.</p>
+                            <div class="reviews__user">
+                                <img src="/img/user_1.jpg" alt="user">
+                                <div class="user__block">
+                                    <p class="user__name">James John</p>
+                                    <p>Mother of two</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews__sub-item">
+                            <div class="reviews__item">
+                                <h5>17Kg lost!</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget lectus urna. Nulla magna tortor, bibendum in mo.</p>
+                                <div class="reviews__user">
+                                    <img src="/img/user_2.jpg" alt="user">
+                                    <div class="user__block">
+                                        <p class="user__name">Mary Patricia</p>
+                                        <p>Mother of two</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="reviews__item">
+                                <h5>43Kg lost!</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <div class="reviews__user">
+                                    <img src="/img/user_3.jpg" alt="user">
+                                    <div class="user__block">
+                                        <p class="user__name">Robert Micheal</p>
+                                        <p>Mother of two</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
         </main>
         <footer class="footer"></footer>
     </div>
@@ -93,26 +205,34 @@
 
     <script>
         $(document).ready(function(){
-        $('.indicator').on('click', function(){
+    function initializeCarousel(indicatorClass, slideClass, slidesClass) {
+        $(indicatorClass).on('click', function(){
             var index = $(this).index();
-            $('.slide').removeClass('active');
-            $('.indicator').removeClass('active');
+            $(slideClass).removeClass('active');
+            $(indicatorClass).removeClass('active');
             $(this).addClass('active');
-            $('.slides').css('transform', 'translateX(' + (-index * 100) + '%)');
-            $('.slide').eq(index).addClass('active');
+            $(slidesClass).css('transform', 'translateX(' + (-index * 100) + '%)');
+            $(slideClass).eq(index).addClass('active');
         });
 
         function autoSlide() {
-            var currentIndex = $('.slide.active').index();
-            var nextIndex = (currentIndex + 1) % $('.slide').length;
-            $('.indicator').removeClass('active');
-            $('.indicator').eq(nextIndex).addClass('active');
-            $('.slide').removeClass('active');
-            $('.slide').eq(nextIndex).addClass('active');
-            $('.slides').css('transform', 'translateX(' + (-nextIndex * 100) + '%)');
+            var currentIndex = $(slideClass + '.active').index();
+            var nextIndex = (currentIndex + 1) % $(slideClass).length;
+            $(indicatorClass).removeClass('active');
+            $(indicatorClass).eq(nextIndex).addClass('active');
+            $(slideClass).removeClass('active');
+            $(slideClass).eq(nextIndex).addClass('active');
+            $(slidesClass).css('transform', 'translateX(' + (-nextIndex * 100) + '%)');
         }
 
-  setInterval(autoSlide, 5000); // Переключение каждые 5 секунд
+        setInterval(autoSlide, 5000); // Переключение каждые 2 секунды
+    }
+
+    // Инициализация первой карусели
+    initializeCarousel('.indicator', '.slide', '.slides');
+
+    // Инициализация второй карусели
+    initializeCarousel('.indicator-two', '.slide-two', '.slides-two');
 });
 
     </script>
